@@ -1,35 +1,36 @@
+/* styles/style.css */
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;500;600&display=swap");
 
 html {
-  font-size: 16px; /* sets the root font size */
-  box-sizing: border-box; /* Sets global default for box model */
-  background-color: #1d2545;
+  font-size: 16px;
+  box-sizing: border-box;
+  background-color: #d9efff; /* light winter blue */
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: inherit; /* Tells everything to inherit border-box by default */
+  box-sizing: inherit;
 }
 
 * {
-  margin: 0; /* remove default margin */
+  margin: 0;
 }
 
 body {
   min-height: 100vh;
-  color: #1d2545;
-  font-size: 1rem; /* 1rem equals 16px */
+  color: #3d424c; /* dark grey text on light background */
+  font-size: 1rem;
   line-height: 1.5rem;
   font-family: "Work Sans", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased; /* Improve text rendering */
+  -webkit-font-smoothing: antialiased;
 }
 
 input,
 button,
 textarea,
 select {
-  font: inherit; /* form controls inherit fonts */
+  font: inherit;
 }
 
 p,
@@ -39,81 +40,19 @@ h3,
 h4,
 h5,
 h6 {
-  overflow-wrap: break-word; /* Avoid text overflows */
+  overflow-wrap: break-word;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: #ccccff;
-  font-family: Poppins, "Work Sans", Helvetica, Arial, sans-serif;
-  text-wrap: balance;
-}
-
-h1 {
-  font-size: 2.36875rem;
-  font-weight: 400;
-  line-height: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-h2 {
-  font-size: 1.77688rem;
-  font-weight: 500;
-  line-height: 2rem;
-  margin-bottom: 0.75rem;
-}
-
-h3 {
-  font-size: 1.33313rem;
-  font-weight: 600;
-  line-height: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-h4 {
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1.25rem;
-  text-transform: uppercase;
-}
-
-p {
-  text-wrap: pretty;
-}
-
+/* Default links (good for header/nav) */
 a {
-  color: #ccccff;
+  color: #e6e6e6;
   font-weight: 500;
+  text-decoration: none;
 }
 
-button {
-  padding: 0.75rem 1rem;
-  background-color: #1d2545;
-  color: #ccccff;
-  border-radius: 0.75rem;
-  border: none;
-  font-weight: 500;
-}
-
-.display-text {
-  font-family: "Bebas Neue", "Work Sans", Helvetica, Arial, sans-serif;
-  font-size: 3.1575rem;
-  font-weight: 400;
-  line-height: 3.5rem;
-}
-
-section.page-section {
-  padding: 1.5rem;
-  border-radius: 1rem;
-  border: 1px solid #d4d9e2;
-  margin: 0 auto 1rem auto;
-  width: 100%;
-  max-width: 1920px;
-}
+/* =========================
+   STICKY HEADER + NAV
+   ========================= */
 
 #page-header {
   padding: 1rem 1.5rem;
@@ -122,45 +61,36 @@ section.page-section {
   top: 0;
   z-index: 1000;
 
-  background-color: #1d2545;
-  border-bottom: 1px solid #d4d9e2;
+  background-color: #333f63;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+#page-header img {
+  height: 100px;
+  width: 100px;
 }
 
 #page-header .logo {
-  color: #ccccff;
-  font-family: Poppins, "Work Sans", Helvetica, Arial, sans-serif;
-  text-decoration: none;
-  font-size: 1.3333rem;
+  display: inline-block;
 }
 
-#hero {
-  background-image: url("../images/header_hero.jpg");
-  background-size: cover;
-  background-position: center;
-
-  height: 70vh;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  text-align: center;
-  color: white;
-
-  margin-bottom: 3rem;
+#page-header .logo img {
+  vertical-align: middle;
 }
 
-#page-header {
-  background-color: #1d2545;
-  border-bottom: 1px solid #d4d9e2;
+#page-header .logo-text {
+  color: #e6e6e6;
+  font-weight: 700;
+  font-size: 2.25rem;
+  margin-left: 0.5rem;
+  vertical-align: middle;
 }
 
-#page-header img {
-  height: 50px;
-  width: auto;
-}
-
+/* Nav */
 #page-header nav ul {
   list-style: none;
   padding: 0;
@@ -172,169 +102,219 @@ section.page-section {
 }
 
 #page-header nav a {
-  text-decoration: none;
-  color: #ccccff;
+  color: #e6e6e6;
   padding: 0.5rem 0.75rem;
   border-radius: 0.5rem;
 }
 
 #page-header nav a:hover {
-  background-color: #edf0f5;
-}
-
-#page-header {
-  padding: 1rem 1.5rem;
-}
-
-/* Resume page spacing */
-.resume h1 {
-  margin-bottom: 1.5rem;
-}
-.resume h2 {
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
-}
-.resume h3 {
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.resume p {
-  margin-bottom: 0.5rem;
-}
-
-.resume ul {
-  margin-top: 0.5rem;
-  margin-left: 1.25rem;
-  margin-bottom: 1rem;
-}
-
-.resume li {
-  margin-bottom: 0.25rem;
-}
-
-.resume > section {
-  margin-bottom: 2rem;
-}
-
-.resume {
-  color: #ccccff;
-}
-
-/* =========================
-   CONTACT FORM (fix labels + alignment)
-   ========================= */
-
-.contact-form {
-  max-width: 600px;
-}
-
-.contact-form div {
-  margin-bottom: 1rem;
-}
-
-.contact-form label {
-  display: block;
-  color: #ffffff;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.contact-form input,
-.contact-form textarea {
-  display: block;
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #d4d9e2;
-  border-radius: 0.75rem;
-  background: #ffffff;
+  background-color: #d9efff;
   color: #3d424c;
 }
 
-.contact-form textarea {
-  resize: none;
+/* =========================
+   HERO SECTION
+   ========================= */
+
+#hero {
+  background-image: url("../images/header_hero.gif");
+  background-size: cover;
+  background-position: center;
+
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  text-align: left;
+  padding: 2rem;
 }
 
-.contact-form button {
-  margin-top: 0.5rem;
-  background-color: #00ffff;
-  color: #ffffff;
-  padding: 0.75rem 1.25rem;
+.display-text {
+  font-family: "Bebas Neue", "Work Sans", Helvetica, Arial, sans-serif;
+  font-size: 6rem;
+  font-weight: 400;
+  line-height: 7rem;
+  margin-bottom: 3rem;
+  max-width: 520px;
+  color: #3d424c;
+}
+
+/* Hero link styled like a button */
+.hero-button {
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  background-color: #333f63;
+  color: #e6e6e6;
   border-radius: 0.75rem;
-  border: none;
   font-weight: 600;
-  cursor: pointer;
 }
 
-.contact-form button:hover {
-  background-color: #b4a7d6;
+.hero-button:hover {
+  background-color: #69a9c3;
 }
 
-/* Courses table */
-.courses-table {
+/* =========================
+   Contact EHRO SECTION
+   ========================= */
+
+#hero-contact {
+  background-image: url("../images/contact_header_hero.gif");
+  background-size: cover;
+  background-position: center;
+
+  height: 90vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.contact-display-text {
+  font-family: "Bebas Neue", "Work Sans", Helvetica, Arial, sans-serif;
+  font-size: 6rem;
+  font-weight: 400;
+  line-height: 7rem;
+  margin-bottom: 3rem;
+  color: #3d424c;
+}
+
+/* Hero link styled like a button */
+.hero-button {
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  background-color: #333f63;
+  color: #e6e6e6;
+  border-radius: 0.75rem;
+  font-weight: 600;
+}
+
+.hero-button:hover {
+  background-color: #69a9c3;
+}
+
+section.page-section {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid #d4d9e2;
+  margin: 0 auto 1rem auto;
   width: 100%;
+  max-width: 1920px;
+}
+
+/* =========================
+   BENTO GRID (BIGGER SECTION)
+   ========================= */
+
+#bento {
+  padding: 4rem 2rem; /* more space around it */
+  max-width: 1600px; /* wider section */
+  margin: 0 auto;
+  min-height: 900px; /* makes the section taller */
+}
+
+.bento-title {
+  margin-bottom: 2rem; /* more space under title */
+  color: #3d424c;
+  font-size: 2rem; /* bigger title */
+}
+
+/* Bigger tiles */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 320px); /* was 240px */
+  grid-auto-rows: 320px; /* was 240px */
+  gap: 2rem; /* more spacing */
+  justify-content: center;
+}
+
+/* Keep images inside tiles */
+.bento-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 1rem;
+
+  object-fit: contain;
+  object-position: center;
+
+  background-color: #e6e6e6;
+}
+
+/* Layout stays the same */
+.left-vert {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+.right-vert {
+  grid-column: 4;
+  grid-row: 1 / span 2;
+}
+
+.sq1 {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.sq2 {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.horiz {
+  grid-column: 2 / span 2;
+  grid-row: 2;
+}
+
+/* Mobile stack */
+@media (max-width: 1400px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 320px;
+  }
+
+  .left-vert,
+  .right-vert,
+  .sq1,
+  .sq2,
+  .horiz {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+/* Shop table */
+.shop-table {
+  width: 90%;
   border-collapse: collapse;
   margin-top: 1rem;
+  margin-left: 3rem;
 
   background-color: #1f2937; /* dark table background */
   color: #f1f5f9; /* light text */
 }
 
-.courses-table th,
-.courses-table td {
+.shop-table th,
+.shop-table td {
   border: 1px solid #4b5563; /* softer border for dark bg */
   padding: 0.75rem;
   vertical-align: top;
 }
 
 /* Header row */
-.courses-table thead th {
+.shop-table thead th {
   background-color: #111827; /* slightly darker header */
   color: #e5e7eb;
   text-align: left;
 }
 
 /* Row headers (course names) */
-.courses-table tbody th {
+.shop-table tbody th {
   font-weight: 600;
   color: #e5e7eb;
-}
-
-/* Projects section */
-#projects h2 {
-  margin-bottom: 1rem;
-}
-
-.project-card {
-  background-color: #111827;
-  border: 1px solid #4b5563;
-  border-radius: 1rem;
-  padding: 1.25rem;
-  margin-bottom: 1rem;
-}
-
-.project-card h3 {
-  margin-bottom: 0.5rem;
-}
-
-.project-card p {
-  margin-bottom: 0.75rem;
-  color: #f1f5f9;
-}
-
-.project-link {
-  color: #ccccff;
-  text-decoration: underline;
-}
-
-.project-link:hover {
-  text-decoration: none;
-}
-
-.project-img {
-  width: 100%;
-  height: auto;
-  border-radius: 0.75rem;
-  margin: 0.75rem 0;
-  display: block;
 }
