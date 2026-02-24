@@ -318,3 +318,14 @@ section.page-section {
   font-weight: 600;
   color: #e5e7eb;
 }
+
+/* Reports page ESRI embed */
+.esri-embed {
+  display: block;
+  width: min(1400px, 100%);
+  height: 80vh; /* responsive height */
+  min-height: 600px; /* keeps it usable */
+  border: 0;
+  margin: 2rem auto; /* centers when max-width kicks in */
+  border-radius: 16px; /* optional */
+}

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Conditions Reports</title>
+  </head>
+
+  <body>
+    <header id="page-header">
+      <a href="index.html" class="logo">
+        <img
+          src="images/html_logo_LBSnow.svg"
+          width="300"
+          height="300"
+          alt="Logo image"
+        />
+        <span class="logo-text">LB Snow</span>
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="reports.html">Conditions Reports</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero-contact">
+        <p class="contact-display-text">Conditions Reports</p>
+      </section>
+      <a
+        class="weatherwidget-io"
+        href="https://forecast7.com/en/46d88n114d00/missoula/?unit=us"
+        data-label_1="Missoula, MT"
+        data-label_2="Weather"
+        data-theme="original"
+        >Missoula, MT Weather</a
+      >
+      <script>
+        !(function (d, s, id) {
+          var js,
+            fjs = d.getElementsByTagName(s)[0];
+          if (!d.getElementById(id)) {
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://weatherwidget.io/js/widget.min.js";
+            fjs.parentNode.insertBefore(js, fjs);
+          }
+        })(document, "script", "weatherwidget-io-js");
+      </script>
+
+      <iframe
+        class="esri-embed"
+        src="https://umontana.maps.arcgis.com/apps/instant/basic/index.html?appid=081576fe25b649b4a35fd033d2009dac"
+        allowfullscreen
+        loading="lazy"
+        title="Conditions Map"
+      >
+        iFrames are not supported on this page.
+      </iframe>
+    </main>
+  </body>
+</html>
