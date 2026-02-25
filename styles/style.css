@@ -116,8 +116,8 @@ a {
    HERO SECTION
    ========================= */
 
-#hero {
-  background-image: url("../images/header_hero.gif");
+#home-hero {
+  background-image: url("../images/header_hero_skijump.gif");
   background-size: cover;
   background-position: center;
 
@@ -156,8 +156,104 @@ a {
   background-color: #69a9c3;
 }
 
+#shop-hero {
+  background-image: url("../images/header_hero_treepaint.gif");
+  background-size: cover;
+  background-position: center;
+
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  text-align: left;
+  padding: 2rem;
+}
+
+#services-hero {
+  background-image: url("../images/header_hero_treepaint.gif");
+  background-size: cover;
+  background-position: center;
+
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  text-align: left;
+  padding: 2rem;
+}
+
+#rentals-hero {
+  background-image: url("../images/header_hero_treepaint.gif");
+  background-size: cover;
+  background-position: center;
+
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  text-align: left;
+  padding: 2rem;
+}
+
+#lodging-hero {
+  background-image: url("../images/header_hero_treepaint.gif");
+  background-size: cover;
+  background-position: center;
+
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  text-align: left;
+  padding: 2rem;
+}
+
+#reports-hero {
+  background-image: url("../images/header_hero_treepaint.gif");
+  background-size: cover;
+  background-position: center;
+
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  text-align: left;
+  padding: 2rem;
+}
+
+#contact-hero {
+  background-image: url("../images/header_hero_treepaint.gif");
+  background-size: cover;
+  background-position: center;
+
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  text-align: left;
+  padding: 2rem;
+}
+
 /* =========================
-   Contact EHRO SECTION
+   Contact HERO SECTION
    ========================= */
 
 #hero-contact {
@@ -183,20 +279,6 @@ a {
   color: #3d424c;
 }
 
-/* Hero link styled like a button */
-.hero-button {
-  display: inline-block;
-  padding: 0.75rem 1rem;
-  background-color: #333f63;
-  color: #e6e6e6;
-  border-radius: 0.75rem;
-  font-weight: 600;
-}
-
-.hero-button:hover {
-  background-color: #69a9c3;
-}
-
 section.page-section {
   padding: 1.5rem;
   border-radius: 1rem;
@@ -207,14 +289,76 @@ section.page-section {
 }
 
 /* =========================
-   BENTO GRID (BIGGER SECTION)
+   NEW CARD SECTION (FLEX WRAP)
    ========================= */
 
-#bento {
-  padding: 4rem 2rem; /* more space around it */
-  max-width: 1600px; /* wider section */
+#quick-links {
+  padding: 2rem;
+  max-width: 1700px;
   margin: 0 auto;
-  min-height: 900px; /* makes the section taller */
+}
+
+.quick-links-title {
+  margin-bottom: 1rem;
+  color: #3d424c;
+  font-size: 2rem;
+}
+
+/* Center the 5 cards as a group */
+.quick-links-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  justify-content: center;
+}
+
+/* Each card is a square */
+.quick-card {
+  width: 300px;
+  height: 300px;
+
+  border: 1px solid #d4d9e2;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: #ffffff;
+}
+
+/* Make the link fill the whole card */
+.quick-card-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Make the image fill the card area */
+.quick-card-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 0.75rem;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+/* =========================
+   BENTO GRID
+   ========================= */
+
+/* Center the bento grid inside the section */
+#bento {
+  padding: 4rem 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
+  min-height: 900px;
+
+  display: flex;
+  justify-content: center;
 }
 
 .bento-title {
@@ -313,7 +457,7 @@ section.page-section {
   text-align: left;
 }
 
-/* Row headers (course names) */
+/* Row headers */
 .shop-table tbody th {
   font-weight: 600;
   color: #e5e7eb;
@@ -323,9 +467,133 @@ section.page-section {
 .esri-embed {
   display: block;
   width: min(1400px, 100%);
-  height: 80vh; /* responsive height */
-  min-height: 600px; /* keeps it usable */
+  height: 80vh;
+  min-height: 600px;
   border: 0;
-  margin: 2rem auto; /* centers when max-width kicks in */
-  border-radius: 16px; /* optional */
+  margin: 2rem auto;
+  border-radius: 16px;
+}
+
+/* =========================
+   SHOP ITEMS (3x3 GRID)
+   ========================= */
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 1100px;
+  margin: 1rem auto;
+}
+
+/* Each product card */
+.shop-card {
+  background-color: #ffffff;
+  border: 1px solid #d4d9e2;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+/* Product image */
+.shop-card img {
+  width: 100%;
+  height: 220px;
+  display: block;
+  border-radius: 0.75rem;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+}
+
+/* Text styles */
+.product-name {
+  margin-bottom: 0.25rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #333f63;
+}
+
+.product-desc {
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  color: #6b7280; /* lighter grey */
+}
+
+.product-price {
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #6b7280; /* big + light */
+}
+
+/* Buy button (matches hero button colors + hover) */
+.buy-button {
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  background-color: #333f63;
+  color: #e6e6e6;
+  border-radius: 0.75rem;
+  font-weight: 600;
+}
+
+.buy-button:hover {
+  background-color: #69a9c3;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+/* Footer band styling */
+.site-footer {
+  background-color: #333f63;
+  color: #e6e6e6;
+  padding: 2rem 1.5rem;
+}
+
+.site-footer a {
+  color: #e6e6e6;
+  text-decoration: underline;
+}
+
+.site-footer a:hover {
+  text-decoration: none;
+}
+
+/* Top row: text left + photo right */
+.footer-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.footer-left {
+  width: 360px;
+}
+
+.footer-right {
+  flex: 1;
+}
+
+/* Store photo (same look as map used to have) */
+.footer-photo {
+  width: 100%;
+  height: 320px;
+  display: block;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+/* Bottom row: full-width map */
+.footer-map {
+  max-width: 1400px;
+  margin: 1.5rem auto 0 auto;
+}
+
+.map-embed-wide {
+  width: 100%;
+  height: 420px;
+  border: 0;
+  border-radius: 1rem;
 }
