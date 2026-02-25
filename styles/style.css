@@ -161,14 +161,12 @@ a {
   background-size: cover;
   background-position: center;
 
-  height: 100vh;
+  height: 90vh;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-
-  text-align: left;
+  text-align: center;
   padding: 2rem;
 }
 
@@ -177,14 +175,12 @@ a {
   background-size: cover;
   background-position: center;
 
-  height: 100vh;
+  height: 90vh;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-
-  text-align: left;
+  text-align: center;
   padding: 2rem;
 }
 
@@ -193,14 +189,12 @@ a {
   background-size: cover;
   background-position: center;
 
-  height: 100vh;
+  height: 90vh;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-
-  text-align: left;
+  text-align: center;
   padding: 2rem;
 }
 
@@ -209,14 +203,12 @@ a {
   background-size: cover;
   background-position: center;
 
-  height: 100vh;
+  height: 90vh;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-
-  text-align: left;
+  text-align: center;
   padding: 2rem;
 }
 
@@ -225,14 +217,12 @@ a {
   background-size: cover;
   background-position: center;
 
-  height: 100vh;
+  height: 90vh;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-
-  text-align: left;
+  text-align: center;
   padding: 2rem;
 }
 
@@ -241,14 +231,12 @@ a {
   background-size: cover;
   background-position: center;
 
-  height: 100vh;
+  height: 90vh;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-
-  text-align: left;
+  text-align: center;
   padding: 2rem;
 }
 
@@ -324,8 +312,10 @@ section.page-section {
 
   border: 1px solid #d4d9e2;
   border-radius: 1rem;
-  padding: 1rem;
   background-color: #ffffff;
+
+  padding: 0;
+  overflow: hidden;
 }
 
 /* Make the link fill the whole card */
@@ -340,10 +330,12 @@ section.page-section {
   width: 100%;
   height: 100%;
   display: block;
-  border-radius: 0.75rem;
 
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
+
+  padding: 5px;
+  box-sizing: border-box;
 }
 
 /* =========================
@@ -432,38 +424,104 @@ section.page-section {
   }
 }
 
+/* =========================
+   SHOP TABLE
+   ========================= */
 /* Shop table */
 .shop-table {
-  width: 90%;
+  width: min(1400px, 100%);
   border-collapse: collapse;
-  margin-top: 1rem;
-  margin-left: 3rem;
-
+  margin: 1.5rem auto; /* centers table */
   background-color: #1f2937; /* dark table background */
   color: #f1f5f9; /* light text */
 }
 
+/* cells */
 .shop-table th,
 .shop-table td {
-  border: 1px solid #4b5563; /* softer border for dark bg */
-  padding: 0.75rem;
+  border: 1px solid #4b5563;
+  padding: 1rem;
   vertical-align: top;
+  text-align: left; /* <-- force left alignment everywhere */
 }
 
-/* Header row */
+/* header row */
 .shop-table thead th {
-  background-color: #111827; /* slightly darker header */
+  background-color: #111827;
   color: #e5e7eb;
-  text-align: left;
 }
 
-/* Row headers */
+/* row headers (the Service column) */
 .shop-table tbody th {
-  font-weight: 600;
+  font-weight: 700;
   color: #e5e7eb;
+  width: 220px; /* gives Service column a consistent size */
+  white-space: nowrap;
 }
 
-/* Reports page ESRI embed */
+/* price column a bit tighter */
+.shop-table td:last-child,
+.shop-table thead th:last-child {
+  width: 140px;
+  white-space: nowrap;
+}
+
+/* =========================
+   LODGING (2 ROOMS)
+   ========================= */
+
+.room-card {
+  display: flex;
+  gap: 1.5rem;
+  align-items: stretch;
+
+  background: #ffffff;
+  border: 1px solid #d4d9e2;
+  border-radius: 1rem;
+  padding: 1rem;
+
+  margin-top: 1.25rem;
+}
+
+.room-photo {
+  width: 293px;
+  height: 165px;
+  border-radius: 1rem;
+  object-fit: cover;
+  flex: 0 0 auto;
+}
+
+.room-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.room-name {
+  margin-bottom: 0.75rem;
+  color: #333f63;
+  font-size: 1.5rem;
+}
+
+.room-card .lodging-form {
+  max-width: none; /* let it fill the right side */
+}
+
+@media (max-width: 900px) {
+  .room-card {
+    flex-direction: column;
+  }
+
+  .room-photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+}
+
+/* =========================
+   ESRI MAP EMBED
+   ========================= */
 .esri-embed {
   display: block;
   width: min(1400px, 100%);
@@ -535,6 +593,75 @@ section.page-section {
 }
 
 .buy-button:hover {
+  background-color: #69a9c3;
+}
+
+/* =========================
+   CONTACT FORM (CENTERED + CLEAN)
+   ========================= */
+
+/* Center the form within that one page-section only */
+.contact-section {
+  display: flex;
+  justify-content: center;
+}
+
+/* Form sizing */
+.contact-form {
+  width: 100%;
+  max-width: 520px;
+}
+
+/* Field spacing */
+.contact-form > div {
+  margin-bottom: 1rem;
+}
+
+/* Labels */
+.contact-form label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+  color: #333f63;
+}
+
+/* Inputs + textarea */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border-radius: 0.75rem;
+  border: 1px solid #d4d9e2;
+  background: #ffffff;
+  color: #3d424c;
+  outline: none;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 180px;
+}
+
+/* Focus ring */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #69a9c3;
+  box-shadow: 0 0 0 3px rgba(105, 169, 195, 0.25);
+}
+
+/* Submit button matches hero button */
+.contact-form button {
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  background-color: #333f63;
+  color: #e6e6e6;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  border: 0;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
   background-color: #69a9c3;
 }
 
